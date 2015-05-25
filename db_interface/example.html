@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Test site</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="obisk.js"></script>
+	<script>
+		$(function(){
+			//Obisk.getAllBTCVisits(function(data){ $("body").html(data) });
+			Obisk.getBTCVisits(new Date(2014,10,1), new Date(2014,10,3),function(visits){
+				visits.forEach(function(visit){
+					$("body").append("<div>"+visit.time_from+" : "+visit.val_int+"</div>");
+				})
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+
+	<header>
+	</header>
+	<section>
+	</section>
+
+</body>
+
+</html>
