@@ -14,7 +14,23 @@ var Obisk={
 		var q={};
 		q["qid"]=1;
 
-		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ alert(data); callback(JSON.parse(data)); });	
+		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
+	},
+
+	getMuzejVisits: function(from,to,callback){
+		var q={};
+		q["qid"]=2;
+		q["from"]=from;
+		q["to"]=to;
+
+		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
+	},
+
+	getAllMuzejVisits: function(callback){
+		var q={};
+		q["qid"]=3;
+
+		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
 	}
 
 }
