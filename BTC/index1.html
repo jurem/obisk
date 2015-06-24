@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Graf BTC 1</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <style type="text/css"></style>
+        <script type="text/javascript">
+            $(function () {
+                
+            var vhodSkupaj = [7551,6624,7193,7490,8542,9297,4564,8404,8157,9030,8321,9206,9211,4446,8268,7731,7659,7547,9001,9253,4572,7495,6778,7773,8412,8322,8941,4206,6852,7374,8009] 
+            var vhodA = [513,462,557,557,601,612,267,704,558,628,572,708,721,234,771,638,596,652,706,502,269,534,519,525,856,512,524,161,419,529,487]
+            var vhodB = [1584,1326,1628,1508,1461,1719,804,1745,1534,1786,1637,1949,1792,740,1766,1403,1744,1433,1565,1547,743,1267,1142,1531,1284,1146,1179,414,930,1275,1331]
+            var vhodC = [2290,1681,1892,2016,2351,2639,1406,2140,2127,2271,2084,2665,2751,1412,2258,2082,1966,2005,2543,2512,1473,1905,1663,1995,1865,2151,2027,1032,1344,2038,2040]
+            var vhodD = [786,871,865,937,1135,966,461,1279,988,1156,1164,1093,978,464,1047,998,915,1003,1061,1115,402,1047,910,941,1423,1093,1293,509,1118,887,1017]
+            var vhodE = [2378,2284,2251,2472,2994,3361,1626,2536,2950,3189,2864,2791,2969,1596,2426,2610,2438,2454,3126,3577,1685,2742,2544,2781,2984,3420,3918,2090,3041,2645,3134]
+            var padavine = [1.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.6, 0.0, 0.0, 1.9, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.1, 0.0, 0.0, 0.3, 3.4, 0.0, 0.0, 0.0, 0.0, 8.9, 0.0]
+            var oznake = []
+            for(var i = 1; i <= 31; i++){
+                oznake.push(i);
+            }
+                
+                $('#container').highcharts({
+                    chart: {
+                        zoomType: 'xy'
+                        
+                    },
+                    title: {
+                        text: 'Število obiskovalcev Hale A'
+                    },
+                    subtitle: {
+                        text: 'Za mesec Julij'
+                    },
+                    xAxis: [{
+                        categories: oznake,// ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        crosshair: true
+                    }],
+                    yAxis: [{ // Primary yAxis
+                        labels: {
+                            format: '{value} mm',
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        },
+                        title: {
+                            text: 'Padavine',
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        }
+                    }, { // Secondary yAxis
+                        title: {
+                            text: 'Obiskovalci',
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        },
+                        labels: {
+                            format: '{value}',
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    tooltip: {
+                        shared: true,
+                        followPointer: true,
+                        headerFormat: '<span style="font-size: 10px">{point.key}. July</span><br/>'
+                      
+                   },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'left',
+                        x: 120,
+                        verticalAlign: 'top',
+                        y: 65,
+                        floating: true,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    series: [
+                        {
+                            name: 'Temperature',
+                            type: 'column',
+                            data: padavine,//[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6,7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6,4,5,6,7,8,9,2],
+                            tooltip: {
+                                valueSuffix: ' mm'
+                            }
+                        },{
+                            name: 'Vhod A',
+                            type: 'spline',
+                            yAxis: 1,
+                            data: vhodA,//[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                        },{
+                            name: 'Vhod B',
+                            type: 'spline',
+                            yAxis: 1,
+                            data: vhodB,//[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                        },{
+                            name: 'Vhod C',
+                            type: 'spline',
+                            yAxis: 1,
+                            data: vhodC,//[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                        },{
+                            name: 'Vhod D',
+                            type: 'spline',
+                            yAxis: 1,
+                            data: vhodD,//[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                        },{
+                            name: 'Vhod E',
+                            type: 'spline',
+                            yAxis: 1,
+                            data: vhodE,//[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            
+                    }]
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <script src="highcharts.js"></script>
+        <div id="container" style="width: 900px; height: 450px; margin: 0 auto"></div>
+    </body>
+
+</html>
