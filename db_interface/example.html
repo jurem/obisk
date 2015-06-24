@@ -16,6 +16,14 @@
 				})
 			});
 
+			// First argument is input name (Example is for Vhod A)
+			Obisk.getBTCVisitsInput('A',new Date(2014,10,1), new Date(2014,10,3),function(visits){
+				visits.forEach(function(visit){
+					console.log(visit);
+					$("body").append("<div>"+visit.time_from+" : "+visit.val_int+"</div>");
+				})
+			});
+
 		});
 	</script>
 </head>
