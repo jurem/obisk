@@ -32,7 +32,7 @@ var Obisk={
 
 		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
 	},
-	
+
 	getBTCVisitsInput: function(loc,from,to,callback){
 		var q={};
 		q["qid"]=4;
@@ -49,6 +49,6 @@ var Obisk={
 		q["loc"]=loc;
 
 		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
-	},
+	}
 
 }
