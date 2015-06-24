@@ -31,6 +31,24 @@ var Obisk={
 		q["qid"]=3;
 
 		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
-	}
+	},
+	
+	getBTCVisitsInput: function(loc,from,to,callback){
+		var q={};
+		q["qid"]=4;
+		q["from"]=from;
+		q["to"]=to;
+		q["loc"]=loc;
+
+		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
+	},
+
+	getAllBTCVisitsInput: function(loc,callback){
+		var q={};
+		q["qid"]=5;
+		q["loc"]=loc;
+
+		$.post(this.url, {"query": JSON.stringify(q) }).done(function(data){ callback(JSON.parse(data)); });	
+	},
 
 }
