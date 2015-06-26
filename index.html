@@ -12,53 +12,63 @@
   </head>
 
   <body>
-
     <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Prva stran</a></li>
-            <li role="presentation"><a href="#">O projektu</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Analiza in vizualizacija dejavnikov vpliva na obiskanost organizacij</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1>Opis projekta</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4><a href="vizualizacija_obiska_muzeja/vizualizacija_ogledov_muzeja.html">Vizualizacija števila ogledov muzeja na dan</a></h4>
-          <p>Razstava čipk</p>
-
-          <h4><a href="geo/geo.html">Geo vizualizacija</a></h4>
-          <p>Vizualizacija količine obiska po vhodih</p>
-
-          <h4><a href="BTC/index1.html">Obisk in padavine</a></h4>
-          <p>Prikaz grafa obiskanosti in padavin</p>
+        <div id="navbarload"></div> <!-- Tukaj se naloži navigacija strani -->
+        <div class="jumbotron">
+          <h2>Analiza in vizualizacija dejavnikov vpliva na obiskanost organizacij</h2>
+          <p>
+            Na tem projektu se ukvarjamo z analizo in vizualizacijo podatkov, ki smo jih dobili iz BTC-ja in Ljubljanskih muzejev.
+          </p>
         </div>
 
-        <div class="col-lg-6">
-          <h4>Vizualizacija 4</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Vizualizacija 5</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Vizualizacija 6</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Obiski razstave Obrazi po dneh</h2>
+            <p class="lead text-muted">
+              Na tem grafu je moč videti porazdelitev obiskov po dneh.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <a href="muzej/stacked.html"><img class="featurette-image img-responsive center-block" src="images/stacked_graf_thumbnail.png" alt=""></a>
+          </div>
         </div>
-      </div>
 
-      <footer class="footer">
-        <p>&copy; FRI 2015</p>
-      </footer>
+        <hr class="featurette-divider">
 
-    </div> <!-- /container -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+        <div class="row featurette">
+          <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading">Vpliv dežja na obisk BTC-ja</h2>
+            <p class="lead text-muted">
+              Opis.
+            </p>
+          </div>
+          <div class="col-md-5 col-md-pull-7">
+            <a href="btc/padavine_btc.html"><img class="featurette-image img-responsive center-block" src="images/padavine_thumb.png" alt=""></a>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Porazdelitev obiskov po vhodih BTC hale A</h2>
+            <p class="lead text-muted">
+              Opis.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <a href="geo/geo.html"><img class="featurette-image img-responsive center-block" src="images/geo_thumb.png" alt=""></a>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div id="footerload"></div>
+    </div>
+    <script src="lib/jquery.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+      $( "#navbarload" ).load( "navbar.html" );
+      $( "#footerload" ).load( "footer.html" );
+    </script>
   </body>
 </html>
