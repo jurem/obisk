@@ -1,12 +1,13 @@
-<!DOCTYPE HTML>
-<html>
-    
+<!doctype html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Analiza in vizualizacija dejavnikov vpliva na obiskanost organizacij</title>
-        <link href="../css/style.css" rel="stylesheet">
-        <script type="text/javascript" src="jquery.min.js"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Analiza in vizualizacija dejavnikov vpliva na obiskanost organizacij</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <link href="../css/style.css" rel="stylesheet">
+
+      <script type="text/javascript" src="jquery.min.js"></script>
         <script type="text/javascript" src="highcharts.js"></script>
         <script type="text/javascript">
             $(function () { 
@@ -437,12 +438,25 @@
         
         });
         </script>
-    </head>
-    
-    <body>
-        <div class="container">
-            <div id="container" style="width: 1000px; margin: 0 auto"></div>
-        </div>
-    </body>
 
+
+    </head>    
+    <body>
+      <div class="container">
+        <div id="navbarload"></div> <!-- Tukaj se naloži navigacija strani -->
+
+        <!--<h2 class="text-center">Obiski razstave Emona s komentarji</h2>-->
+
+        <div id="container" style="width: 1000px; margin: 0 auto"></div>
+
+        <hr class="featurette-divider">
+        <div id="footerload"></div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script>
+          $( "#navbarload" ).load( "../navbar.html" );
+          $( "#footerload" ).load( "../footer.html" );
+        </script>
+      </div>
+    </body>
 </html>
