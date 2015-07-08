@@ -164,6 +164,16 @@ d3.selectAll(".filter_button").on("change", function() {
     d3.json("res\\circle.json", function(collection) {
 // Add a LatLng object to each item in the dataset
 
+        if(collection == null){
+            collection = {"objects":[
+                {"circle":{"name":"A", "coordinates":[46.067292, 14.541943]}},
+                {"circle":{"name":"B","coordinates":[46.066647, 14.542317]}},
+                {"circle":{"name":"C","coordinates":[46.065330, 14.543121]}},
+                {"circle":{"name":"D","coordinates":[46.067090, 14.542861]}},
+                {"circle":{"name":"E","coordinates":[46.065539, 14.543729]}}
+            ]};
+        }
+
         collection.objects.forEach(function(d) {
             d.LatLng = new L.LatLng(d.circle.coordinates[0],
                     d.circle.coordinates[1]);
